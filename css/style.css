@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../fonts/SegoeUILight.woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Engravers Gothic BT";
+  src: url("../fonts/engravers-gothic-bt.woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("../img/background1.jpg");
+  background-size: 100% auto;
+}
+
+.main-header {
+  padding-top: 100px;
+}
+
+.heading {
+  /*width: 55.3125%;
+  margin: 0 auto;*/
+  font-family: "Segoe UI", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 5.142857142857143em; /* 72/14 */
+  line-height: 1.722222222222222em; /*124/72*/
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.44);
+  text-transform: uppercase;
+  letter-spacing: 0.135em;
+}
+
+@media screen and (max-width: 640px)
+
