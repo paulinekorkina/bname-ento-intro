@@ -29,7 +29,7 @@ body {
   /*background-size: 1280px auto;*/
 }
 
-div,
+/*div,
 article,
 ul,
 img {
@@ -43,7 +43,7 @@ p,
 a,
 li {
   outline: 1px dashed #888888;
-}
+}*/
 
 .main-container {
   position: relative;
@@ -51,8 +51,7 @@ li {
   flex-direction: column;
   /*justify-content: flex-end;*/
   align-items: center;
-  height: 720px; /* убрать потом */
-  overflow: hidden;
+  /*height: 720px;*/ /* убрать потом */
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -76,13 +75,23 @@ li {
 
 .more-info-btn {
   position: absolute;
-  z-index: 3;
+  z-index: 999;
   right: 47px;
   top: 32px;
   display: block;
   width: 46px;
   height: 46px;
   background: url("../img/more-info-icon.png") no-repeat;
+}
+
+@keyframes clouds-top {
+  from {
+    transform: translateX(-36.38302915382792%);
+  }
+
+  to {
+    transform: translateX(60.67788575491823%);
+  }
 }
 
 .clouds-top {
@@ -95,7 +104,17 @@ li {
   animation-name: clouds-top;
   animation-duration: 180s;
   animation-fill-mode: both; /* почему-то все равно начинается с 0 */
-  transition-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@keyframes clouds-top-copy {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(60.67788575491823%);
+  }
 }
 
 .clouds-top-1 {
@@ -106,8 +125,104 @@ li {
   width: 164.8046875%;
   height: auto;
   animation-name: clouds-top-copy;
-  animation-duration: 180s;
-  animation-delay: 140s;
+  animation-duration: 212s;
+  animation-delay: 175s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes clouds-middle {
+  from {
+    transform: translateX(-21.92962542565267%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.clouds-middle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 172.0703125%; /* 4405/2560*/
+  height: auto;
+  animation-name: clouds-middle;
+  animation-duration: 120s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes clouds-middle-copy {
+  from {
+    transform: translateX(58.11577752553916%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.clouds-middle-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 172.0703125%; /* 4405/2560*/
+  height: auto;
+  animation-name: clouds-middle-copy;
+  animation-duration: 155s;
+  animation-delay: 115s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes clouds-bottom {
+  from {
+    transform: translateX(-13.75448028673835%);
+  }
+
+  to {
+    transform: translateX(57.34767025089606%);
+  }
+}
+
+.clouds-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 172.0703125%; /* 4405/2560*/
+  height: auto;
+  animation-name: clouds-bottom;
+  animation-duration: 60s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes clouds-bottom-copy {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(57.34767025089606%);
+  }
+}
+
+.clouds-bottom-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 172.0703125%; /* 4405/2560*/
+  height: auto;
+  animation-name: clouds-bottom-copy;
+  animation-duration: 133s;
+  animation-delay: 55s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   animation-timing-function: linear;
@@ -131,6 +246,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 3;
   width: 100%;
   height: auto;
   /*height: 100%;*/
@@ -145,7 +261,7 @@ li {
 }
 
 .sakura-bottom {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   z-index: 4;
@@ -154,7 +270,8 @@ li {
 }
 
 .contacts {
-  position: relative;
+  position: absolute;
+  top: 100%;
   z-index: 6;
   /*width: 0,2609375%;*/ /* 668/2560 */
   /*margin-left: -13.046875%; */ /* 334/2560 */
@@ -212,33 +329,92 @@ li {
   background-size: contain;
 }
 
+.petals1 {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  z-index: 99;
+  width: 31.25%; /*800/2560*/
+  height: auto;
+  animation-name: petals1-x, petals1-rotate;
+  animation-duration: 10s, 10s;
+  animation-fill-mode: both, both;
+  animation-timing-function: ease, /*cubic-bezier(0.86, 0, 0.07, 1)*/ease;
+}
 
-@keyframes clouds-top {
-  from: {
-    transform: translateX(-30%);
+@keyframes petals1-x {
+  0% {
+    left: -31.25%;
   }
 
-  to {
-    transform: translateX(-100%);
+  66% {
+    /*left: 40%;*/
+    top: 20%;
+  }
+
+  100% {
+    left: 100%; /* 2560/800 */
+    top: 40%;
   }
 }
 
-@keyframes clouds-top-copy {
-  from {
-    transform: translateX(61%);
+@keyframes petals1-rotate {
+/*  33% {
+    transform: rotate(-30deg);
   }
 
-  to {
-    transform: translateX(-100%);
+  55% {
+    transform: rotate(-180deg);
+  }*/
+
+  100% {
+    transform: rotate(-180deg);
   }
 }
 
+.petals2 {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  z-index: 99;
+  width: 10.7421875%; /*275/2560*/
+  height: auto;
+  animation-name: petals2-x, petals2-rotate;
+  animation-duration: 10s, 10s;
+  animation-fill-mode: both, both;
+  animation-timing-function: ease, ease;
 
+}
 
+@keyframes petals2-x {
+  0% {
+    left: -10.7421875%;
+  }
 
+  66% {
+    /*left: 45%;*/
+    top: 25%;
+  }
 
+  100% {
+    left: 100%; /* 2560/800 */
+    top: 30%;
+  }
+}
 
+@keyframes petals2-rotate {
+/*  33% {
+    transform: rotate(-30deg);
+  }
 
+  55% {
+    transform: rotate(-180deg);
+  }*/
+
+  100% {
+    transform: rotate(-240deg);
+  }
+}
 
 
 
