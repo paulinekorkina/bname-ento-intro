@@ -19,11 +19,13 @@ body {
 }
 
 body {
+  /*display: flex;*/
+  /*flex-direction: column;*/
   /*width: 1280px;*/
-  background-color: #093ea8;
-  background-image: url("../img/background1.jpg");
+  /*background-color: lightpink;*/
+  /*background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 100% auto;*/
   /*background-size: 1280px auto;*/
 }
 
@@ -45,13 +47,22 @@ li {
 
 .main-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: flex-end;*/
+  align-items: center;
+  height: 720px; /* убрать потом */
   overflow: hidden;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .heading {
   position: relative;
   z-index: 3;
-  margin-top: 3.90625%;
+  margin-top: 5.859375%; /* 150/2560 */
+  margin-bottom: 25%; /* 640/2560 */
   font-family: "Segoe UI", "Arial", sans-serif;
   font-weight: 300;
   font-size: 5.142857142857143em; /* 72/14 */
@@ -83,7 +94,7 @@ li {
   height: auto;
   animation-name: clouds-top;
   animation-duration: 180s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both; /* почему-то все равно начинается с 0 */
   transition-timing-function: linear;
 }
 
@@ -96,18 +107,117 @@ li {
   height: auto;
   animation-name: clouds-top-copy;
   animation-duration: 180s;
-  animation-delay: 180s;
+  animation-delay: 140s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   animation-timing-function: linear;
 }
 
 .sakura {
-  width: 1023px;
-  height: 852px;
+  position: absolute;
+  /*top: 300px;*/
+  /*top: 11.62790697674419%;*/
+  top: 0;
+  /*top: 150px;*/
+  left: 0;
+  z-index: 3;
+  /*width: 1023px;*/
+  width: 45.234375%; /* 1158/2560 */
+  /*height: 852px;*/
+  height: auto;
 }
 
+.monk {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  /*height: 100%;*/
+}
+
+.logo {
+  position: relative;
+  z-index: 5;
+  width: 12.890625%;
+  /*width: 330px;*/
+  height: auto;
+}
+
+.sakura-bottom {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  height: auto;
+}
+
+.contacts {
+  position: relative;
+  z-index: 6;
+  /*width: 0,2609375%;*/ /* 668/2560 */
+  /*margin-left: -13.046875%; */ /* 334/2560 */
+  padding: 10px 15px 20px 5px;
+  box-sizing: border-box;
+  font-family: "Engravers Gothic BT", "Arial", sans-serif;
+  font-size: 60px;
+  line-height: 101px;
+  color: #ffffff;
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.41);
+  background-image: url("../img/contacts-background.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contacts p {
+  position: relative;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.contacts .phone {
+  margin-bottom: 5px;
+  padding-left: 111px;
+  letter-spacing: -0.08em;
+}
+
+.phone::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  z-index: 7;
+  width: 68px;
+  height: 68px;
+  background: url("../img/phone-icon.png") no-repeat;
+  background-size: contain;
+}
+
+.skype {
+  padding-left: 130px;
+  letter-spacing: 0.06em;
+}
+
+.skype::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 7;
+  width: 68px;
+  height: 68px;
+  background: url("../img/skype-icon.png") no-repeat;
+  background-size: contain;
+}
+
+
 @keyframes clouds-top {
+  from: {
+    transform: translateX(-30%);
+  }
+
   to {
     transform: translateX(-100%);
   }
@@ -131,15 +241,56 @@ li {
 
 
 
+
+
+
+
 @media screen and (max-width: 1920px) {
   .heading {
     font-size: 52px;
   }
 
+  .contacts {
+    font-size: 45px;
+    line-height: 75px;
+  }
+
+  .contacts .phone {
+    padding-left: 83px;
+  }
+
+  .phone::before,
+  .skype::before {
+    width: 51px;
+    height: 51px;
+  }
+
+  .skype {
+    padding-left: 97px;
+  }
+}
 
 @media screen and (max-width: 1280px) {
   .heading {
     font-size: 36px;
   }
 
+  .contacts {
+    font-size: 30px;
+    line-height: 50px;
+  }
+
+  .contacts .phone {
+    padding-left: 55px;
+  }
+
+  .phone::before,
+  .skype::before {
+    width: 34px;
+    height: 34px;
+  }
+
+  .skype {
+    padding-left: 65px;
+  }
 }
