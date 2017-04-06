@@ -278,20 +278,9 @@ li {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 3;
-/*  width: 100%;
-  height: auto;*/
-  /*height: 100%;*/
+  z-index: 4;
   background-image: url("../img/monk.png");
   background-size: contain;
-}
-
-.logo {
-  position: relative;
-  z-index: 5;
-  width: 12.890625%;
-  /*width: 330px;*/
-  height: auto;
 }
 
 .sakura-bottom {
@@ -377,15 +366,13 @@ li {
   top: 50%;
   z-index: 99;
   width: 31.25%; /*800/2560*/
+  width: 25%
   height: 100%;
   height: auto;
-  /*background-image: url("../img/petals1.png");
-  background-position: */
   animation-name: petals1-x, petals1-rotate;
   animation-duration: 100s, 100s;
   animation-delay: 8s, 8s;
   animation-fill-mode: both, both;
-  /*animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715), cubic-bezier(0.86, 0, 0.07, 1);*/
   animation-timing-function: ease, ease;
   animation-iteration-count: infinite;
 }
@@ -411,11 +398,16 @@ li {
 
   100% {
     left: 150%;
+    top: 40%;
   }
 }
 
 @keyframes petals1-rotate {
   10% {
+    transform: rotate(-240deg);
+  }
+
+  100% {
     transform: rotate(-240deg);
   }
 }
@@ -426,6 +418,7 @@ li {
   top: 40%;
   z-index: 99;
   width: 31.25%; /*800/2560*/
+  width: 22%;
   height: 100%;
   height: auto;
   /*background-image: url("../img/petals1.png");
@@ -460,6 +453,7 @@ li {
 
   100% {
     left: 150%;
+    top: 40%;
   }
 }
 
@@ -469,6 +463,10 @@ li {
   }
 
   10% {
+    transform: rotate(-360deg);
+  }
+
+  100% {
     transform: rotate(-360deg);
   }
 }
@@ -509,10 +507,15 @@ li {
 
   100% {
     left: 150%;
+    top: 30%;
   }
 }
 
 @keyframes petals2-rotate {
+  10% {
+    transform: rotate(-450deg);
+  }
+
   100% {
     transform: rotate(-450deg);
   }
@@ -553,6 +556,7 @@ li {
 
   100% {
     left: 150%;
+    top: 30%;
   }
 }
 
@@ -562,6 +566,10 @@ li {
   }
 
   10% {
+    transform: rotate(-315deg);
+  }
+
+  100% {
     transform: rotate(-315deg);
   }
 }
