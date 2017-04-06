@@ -57,14 +57,13 @@ li {
   align-items: center;
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
-  /*background-size: 100% auto;*/
   background-size: contain;
   overflow-x: hidden;
 }
 
 .heading {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   margin-top: 5.859375%; /* 150/2560 */
   margin-bottom: auto;
   font-family: "Segoe UI", "Arial", sans-serif;
@@ -104,7 +103,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
   width: 164.8046875%;
   height: 100%;
   background-image: url("../img/clouds-top2.png");
@@ -131,7 +130,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
   width: 164.8046875%;
   height: 100%;
   background-image: url("../img/clouds-top2.png");
@@ -160,7 +159,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 172.0703125%; /* 4405/2560*/
   height: 100%;
   background-image: url("../img/clouds-middle4.png");
@@ -187,7 +186,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 172.0703125%; /* 4405/2560*/
   height: 100%;
   background-image: url("../img/clouds-middle4.png");
@@ -216,7 +215,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 7;
   width: 172.0703125%; /* 4405/2560*/
   height: 100%;
   background-image: url("../img/clouds-bottom.png");
@@ -243,7 +242,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 7;
   width: 172.0703125%; /* 4405/2560*/
   height: 100%;
   background-image: url("../img/clouds-bottom.png");
@@ -263,7 +262,7 @@ li {
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 3;
+  z-index: 4;
   width: 45.234375%; /* 1158/2560 */
   height: 100%;
   background-image: url("../img/sakura3.png");
@@ -278,7 +277,7 @@ li {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 4;
+  z-index: 6;
   background-image: url("../img/monk.png");
   background-size: contain;
 }
@@ -289,16 +288,14 @@ li {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 4;
-  /*width: 100%;
-  height: auto;*/
+  z-index: 8;
   background-image: url("../img/footer-background.png");
   background-size: contain;
 }
 
 .contacts {
   position: relative;
-  z-index: 6;
+  z-index: 9;
   width: 26.09375%; /* 668/2560 */
   padding: 10px 15px 20px 5px;
   box-sizing: border-box;
@@ -331,7 +328,7 @@ li {
   position: absolute;
   left: 10px;
   top: 15px;
-  z-index: 7;
+  z-index: 10;
   width: 68px;
   width: 10.17964071856287%; /* 68/668 */
   height: 68px;
@@ -341,7 +338,6 @@ li {
 }
 
 .skype {
-  /*padding-left: 130px;*/
   letter-spacing: 0.06em;
   text-align: right;
 }
@@ -351,7 +347,7 @@ li {
   position: absolute;
   left: 10px;
   top: 10px;
-  z-index: 7;
+  z-index: 10;
   width: 68px;
   width: 10.17964071856287%; /* 68/668 */
   height: 68px;
@@ -364,9 +360,9 @@ li {
   position: absolute;
   left: 0;
   top: 50%;
-  z-index: 99;
+  z-index: 5;
   width: 31.25%; /*800/2560*/
-  width: 25%
+  width: 16%;
   height: 100%;
   height: auto;
   animation-name: petals1-x, petals1-rotate;
@@ -383,22 +379,21 @@ li {
   }
 
   2.5% {
-    top: 40%;
+    top: 42%;
   }
 
   4% {
-    /*left: 40%;*/
-    top: 10%;
+    top: 12%;
   }
 
   10% {
     left: 100%; /* 2560/800 */
-    top: 40%;
+    top: 38%;
   }
 
   100% {
     left: 150%;
-    top: 40%;
+    top: 38%;
   }
 }
 
@@ -416,18 +411,13 @@ li {
   position: absolute;
   left: 0;
   top: 40%;
-  z-index: 99;
-  width: 31.25%; /*800/2560*/
-  width: 22%;
-  height: 100%;
+  z-index: 5;
+  width: 16%;
   height: auto;
-  /*background-image: url("../img/petals1.png");
-  background-position: */
   animation-name: petals-copy-x, petals-copy-rotate;
   animation-duration: 100s, 100s;
-  animation-delay: 8.25s, 8.25s;
+  animation-delay: 8s, 8s;
   animation-fill-mode: both, both;
-  /*animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715), cubic-bezier(0.86, 0, 0.07, 1);*/
   animation-timing-function: ease, ease;
   animation-iteration-count: infinite;
 }
@@ -442,7 +432,6 @@ li {
   }
 
   4% {
-    /*left: 40%;*/
     top: 25%;
   }
 
@@ -463,11 +452,11 @@ li {
   }
 
   10% {
-    transform: rotate(-360deg);
+    transform: rotate(-325deg);
   }
 
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(-325deg);
   }
 }
 
@@ -475,12 +464,12 @@ li {
   position: absolute;
   left: 0;
   top: 40%;
-  z-index: 99;
+  z-index: 5;
   width: 10.7421875%; /*275/2560*/
   height: auto;
   animation-name: petals2-x, petals2-rotate;
   animation-duration: 100s, 100s;
-  animation-delay: 8.5s, 8.5s;
+  animation-delay: 8.1s, 8.1s;
   animation-fill-mode: both, both;
   animation-timing-function: ease, ease;
   animation-iteration-count: infinite;
@@ -496,7 +485,6 @@ li {
   }
 
   4% {
-    /*left: 45%;*/
     top: 10%;
   }
 
@@ -513,11 +501,11 @@ li {
 
 @keyframes petals2-rotate {
   10% {
-    transform: rotate(-450deg);
+    transform: rotate(-405deg);
   }
 
   100% {
-    transform: rotate(-450deg);
+    transform: rotate(-405deg);
   }
 }
 
@@ -525,7 +513,7 @@ li {
   position: absolute;
   left: 0;
   top: 40%;
-  z-index: 99;
+  z-index: 5;
   width: 10.7421875%; /*275/2560*/
   height: auto;
   animation-name: petals2copy-x, petals2copy-rotate;
@@ -576,7 +564,6 @@ li {
 
 .info-modal-wrap {
   width: 846px;
-  /*width: 33.046875%;*/ /* 846/2560 */
   margin-top: 26px;
   margin-right: 38px;
 }
@@ -585,10 +572,6 @@ li {
   border-radius: 0;
   background-color: rgba(255, 255, 255, 0.86);
   border: none;
-}
-
-.modal-body {
-  /*padding: 0;*/
 }
 
 .modal-content {
@@ -697,4 +680,52 @@ li {
   .heading {
     font-size: 1em;
   }
+
+  @keyframes petals1-x {
+  0% {
+    left: -31.25%;
+  }
+
+  2.5% {
+    top: 42%;
+  }
+
+  4% {
+    top: 25%;
+  }
+
+  10% {
+    left: 100%; /* 2560/800 */
+    top: 38%;
+  }
+
+  100% {
+    left: 150%;
+    top: 38%;
+  }
+}
+
+@keyframes petals-copy-x {
+  0% {
+    left: -31.25%;
+  }
+
+  2.5% {
+    top: 45%;
+  }
+
+  4% {
+    top: 30%;
+  }
+
+  10% {
+    left: 100%; /* 2560/800 */
+    top: 40%;
+  }
+
+  100% {
+    left: 150%;
+    top: 40%;
+  }
+}
 }
