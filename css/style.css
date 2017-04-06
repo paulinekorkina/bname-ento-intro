@@ -29,7 +29,7 @@ body {
   /*background-size: 1280px auto;*/
 }
 
-/*div,
+div,
 article,
 ul,
 img {
@@ -43,28 +43,44 @@ p,
 a,
 li {
   outline: 1px dashed #888888;
-}*/
+}
+
+.main-wrapper {
+  width: 100%;
+}
+
+.main-inner {
+    position: relative;
+    height: 0;
+    padding-top: 56.25%;
+    border: none;
+    box-sizing: content-box;
+}
 
 .main-container {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   /*justify-content: flex-end;*/
   align-items: center;
-  /*height: 720px;*/ /* убрать потом */
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  /*background-size: 100% auto;*/
+  background-size: contain;
 }
 
 .heading {
   position: relative;
   z-index: 3;
   margin-top: 5.859375%; /* 150/2560 */
-  margin-bottom: 25%; /* 640/2560 */
+  margin-bottom: auto;
   font-family: "Segoe UI", "Arial", sans-serif;
   font-weight: 300;
-  font-size: 5.142857142857143em; /* 72/14 */
+  font-size: 2.8125vw; /*72*100/2560*/
   line-height: 1.722222222222222em; /*124/72*/
   color: #ffffff;
   text-align: center;
@@ -75,13 +91,14 @@ li {
 
 .more-info-btn {
   position: absolute;
-  z-index: 999;
+  z-index: 9999;
   right: 47px;
   top: 32px;
   display: block;
-  width: 46px;
+  width: 1.796875%; /* 46/2560 */
   height: 46px;
-  background: url("../img/more-info-icon.png") no-repeat;
+  background: url("../img/more-info-icon.png") left top no-repeat;
+  background-size: contain;
 }
 
 @keyframes clouds-top {
@@ -270,16 +287,14 @@ li {
 }
 
 .contacts {
-  position: absolute;
-  top: 100%;
+  position: relative;
   z-index: 6;
-  /*width: 0,2609375%;*/ /* 668/2560 */
-  /*margin-left: -13.046875%; */ /* 334/2560 */
+  width: 26.09375%; /* 668/2560 */
   padding: 10px 15px 20px 5px;
   box-sizing: border-box;
   font-family: "Engravers Gothic BT", "Arial", sans-serif;
-  font-size: 60px;
-  line-height: 101px;
+  font-size: 2.34375vw; /*60*100/2560*/
+  line-height: 1.683333333333333;
   color: #ffffff;
   text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.41);
   background-image: url("../img/contacts-background.png");
@@ -296,8 +311,9 @@ li {
 
 .contacts .phone {
   margin-bottom: 5px;
-  padding-left: 111px;
+  /*padding-left: 111px;*/
   letter-spacing: -0.08em;
+  text-align: right;
 }
 
 .phone::before {
@@ -307,14 +323,17 @@ li {
   top: 15px;
   z-index: 7;
   width: 68px;
+  width: 10.17964071856287%; /* 68/668 */
   height: 68px;
+  height: 100%;
   background: url("../img/phone-icon.png") no-repeat;
   background-size: contain;
 }
 
 .skype {
-  padding-left: 130px;
+  /*padding-left: 130px;*/
   letter-spacing: 0.06em;
+  text-align: right;
 }
 
 .skype::before {
@@ -324,7 +343,9 @@ li {
   top: 10px;
   z-index: 7;
   width: 68px;
+  width: 10.17964071856287%; /* 68/668 */
   height: 68px;
+  height: 100%;
   background: url("../img/skype-icon.png") no-repeat;
   background-size: contain;
 }
@@ -416,57 +437,82 @@ li {
   }
 }
 
+.info-modal-wrap {
+  width: 846px;
+  /*width: 33.046875%;*/ /* 846/2560 */
+  margin-top: 26px;
+  margin-right: 38px;
+}
 
+.info-modal {
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.86);
+  border: none;
+}
+
+.modal-body {
+  /*padding: 0;*/
+}
+
+.modal-content {
+  box-shadow: none;
+}
+
+.modal-backdrop {
+  background-color: transparent;
+}
+
+.modal-info-text {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.italic {
+  font-style: italic;
+}
 
 
 
 
 @media screen and (max-width: 1920px) {
-  .heading {
-    font-size: 52px;
-  }
-
-  .contacts {
-    font-size: 45px;
-    line-height: 75px;
-  }
-
-  .contacts .phone {
+  /*.contacts .phone {
     padding-left: 83px;
-  }
+  }*/
 
-  .phone::before,
+/*  .phone::before,
   .skype::before {
     width: 51px;
     height: 51px;
-  }
+  }*/
 
   .skype {
-    padding-left: 97px;
+    /*padding-left: 97px;*/
+    padding-right: 25px;
   }
 }
 
 @media screen and (max-width: 1280px) {
-  .heading {
-    font-size: 36px;
+  .more-info-btn {
+    width: 23px;
+    height: 23px;
   }
 
-  .contacts {
-    font-size: 30px;
-    line-height: 50px;
-  }
-
-  .contacts .phone {
+  /*.contacts .phone {
     padding-left: 55px;
-  }
+  }*/
 
-  .phone::before,
+/*  .phone::before,
   .skype::before {
     width: 34px;
     height: 34px;
-  }
+  }*/
 
   .skype {
-    padding-left: 65px;
+    /*padding-left: 65px;*/
+    padding-right: 17px;
   }
 }
