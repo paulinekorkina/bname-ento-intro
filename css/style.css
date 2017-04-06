@@ -247,26 +247,30 @@ li {
 
 .sakura {
   position: absolute;
-  /*top: 300px;*/
-  /*top: 11.62790697674419%;*/
   top: 0;
-  /*top: 150px;*/
+  bottom: 0;
   left: 0;
   z-index: 3;
-  /*width: 1023px;*/
   width: 45.234375%; /* 1158/2560 */
-  /*height: 852px;*/
-  height: auto;
+  height: 100%;
+  background-image: url("../img/sakura3.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .monk {
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   z-index: 3;
-  width: 100%;
-  height: auto;
+/*  width: 100%;
+  height: auto;*/
   /*height: 100%;*/
+  background-image: url("../img/monk.png");
+  background-size: contain;
 }
 
 .logo {
@@ -279,11 +283,15 @@ li {
 
 .sakura-bottom {
   position: absolute;
-  left: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 4;
-  width: 100%;
-  height: auto;
+  /*width: 100%;
+  height: auto;*/
+  background-image: url("../img/footer-background.png");
+  background-size: contain;
 }
 
 .contacts {
@@ -478,17 +486,16 @@ li {
 
 
 
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1920px) {
-  /*.contacts .phone {
-    padding-left: 83px;
-  }*/
-
-/*  .phone::before,
-  .skype::before {
-    width: 51px;
-    height: 51px;
-  }*/
-
   .skype {
     /*padding-left: 97px;*/
     padding-right: 25px;
@@ -501,18 +508,79 @@ li {
     height: 23px;
   }
 
-  /*.contacts .phone {
-    padding-left: 55px;
-  }*/
-
-/*  .phone::before,
-  .skype::before {
-    width: 34px;
-    height: 34px;
-  }*/
-
   .skype {
-    /*padding-left: 65px;*/
     padding-right: 17px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .phone::before {
+    top: 10px;
+    left: 5px;
+  }
+
+  .skype::before {
+    top: 10px;
+    left: 5px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-inner {
+    height: 100vh;
+    padding-top: 0;
+    border: none;
+    box-sizing: content-box;
+  }
+
+  .main-container {
+    background-position: center top;
+    background-size: auto 100%;
+  }
+
+  .contacts {
+    width: 235px;
+    font-size: 21px;
+  }
+
+  .skype::before {
+    top: 8px;
+    left: 5px;
+  }
+
+  .sakura {
+    background-position: left center;
+    background-size: contain;
+  }
+
+  .monk {
+    background-position: center center;
+    background-size: auto 100%;
+  }
+
+  .sakura-bottom {
+    background-position: center bottom;
+    background-size: auto 100%;
+  }
+
+  .info-modal-wrap {
+    width: 90%;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .more-info-btn {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heading {
+    font-size: 1em;
   }
 }
