@@ -58,7 +58,7 @@ li {
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .heading {
@@ -195,7 +195,7 @@ li {
   background-size: auto 100%;
   animation-name: clouds-middle-copy;
   animation-duration: 155s;
-  animation-delay: 115s;
+  animation-delay: 110s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   animation-timing-function: linear;
