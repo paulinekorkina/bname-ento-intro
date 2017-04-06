@@ -18,18 +18,7 @@ body {
   padding: 0;
 }
 
-body {
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*width: 1280px;*/
-  /*background-color: lightpink;*/
-  /*background-image: url("../img/background.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% auto;*/
-  /*background-size: 1280px auto;*/
-}
-
-div,
+/*div,
 article,
 ul,
 img {
@@ -43,18 +32,18 @@ p,
 a,
 li {
   outline: 1px dashed #888888;
-}
+}*/
 
 .main-wrapper {
   width: 100%;
 }
 
 .main-inner {
-    position: relative;
-    height: 0;
-    padding-top: 56.25%;
-    border: none;
-    box-sizing: content-box;
+  position: relative;
+  height: 0;
+  padding-top: 56.25%;
+  border: none;
+  box-sizing: content-box;
 }
 
 .main-container {
@@ -65,12 +54,12 @@ li {
   left: 0;
   display: flex;
   flex-direction: column;
-  /*justify-content: flex-end;*/
   align-items: center;
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   /*background-size: 100% auto;*/
   background-size: contain;
+  overflow-x: hidden;
 }
 
 .heading {
@@ -117,10 +106,14 @@ li {
   left: 0;
   z-index: 2;
   width: 164.8046875%;
-  height: auto;
+  height: 100%;
+  background-image: url("../img/clouds-top2.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   animation-name: clouds-top;
   animation-duration: 180s;
-  animation-fill-mode: both; /* почему-то все равно начинается с 0 */
+  animation-fill-mode: both;
   animation-timing-function: linear;
 }
 
@@ -140,7 +133,11 @@ li {
   left: 0;
   z-index: 2;
   width: 164.8046875%;
-  height: auto;
+  height: 100%;
+  background-image: url("../img/clouds-top2.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   animation-name: clouds-top-copy;
   animation-duration: 212s;
   animation-delay: 175s;
@@ -165,7 +162,11 @@ li {
   left: 0;
   z-index: 2;
   width: 172.0703125%; /* 4405/2560*/
-  height: auto;
+  height: 100%;
+  background-image: url("../img/clouds-middle4.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   animation-name: clouds-middle;
   animation-duration: 120s;
   animation-fill-mode: both;
@@ -188,7 +189,11 @@ li {
   left: 0;
   z-index: 2;
   width: 172.0703125%; /* 4405/2560*/
-  height: auto;
+  height: 100%;
+  background-image: url("../img/clouds-middle4.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   animation-name: clouds-middle-copy;
   animation-duration: 155s;
   animation-delay: 115s;
@@ -213,7 +218,11 @@ li {
   left: 0;
   z-index: 3;
   width: 172.0703125%; /* 4405/2560*/
-  height: auto;
+  height: 100%;
+  background-image: url("../img/clouds-bottom.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   animation-name: clouds-bottom;
   animation-duration: 60s;
   animation-fill-mode: both;
@@ -236,7 +245,11 @@ li {
   left: 0;
   z-index: 3;
   width: 172.0703125%; /* 4405/2560*/
-  height: auto;
+  height: 100%;
+  background-image: url("../img/clouds-bottom.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   animation-name: clouds-bottom-copy;
   animation-duration: 133s;
   animation-delay: 55s;
@@ -361,14 +374,20 @@ li {
 .petals1 {
   position: absolute;
   left: 0;
-  top: 40%;
+  top: 50%;
   z-index: 99;
   width: 31.25%; /*800/2560*/
+  height: 100%;
   height: auto;
+  /*background-image: url("../img/petals1.png");
+  background-position: */
   animation-name: petals1-x, petals1-rotate;
-  animation-duration: 10s, 10s;
+  animation-duration: 100s, 100s;
+  animation-delay: 8s, 8s;
   animation-fill-mode: both, both;
-  animation-timing-function: ease, /*cubic-bezier(0.86, 0, 0.07, 1)*/ease;
+  /*animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715), cubic-bezier(0.86, 0, 0.07, 1);*/
+  animation-timing-function: ease, ease;
+  animation-iteration-count: infinite;
 }
 
 @keyframes petals1-x {
@@ -376,43 +395,97 @@ li {
     left: -31.25%;
   }
 
-  66% {
+  2.5% {
+    top: 40%;
+  }
+
+  4% {
     /*left: 40%;*/
-    top: 20%;
+    top: 10%;
+  }
+
+  10% {
+    left: 100%; /* 2560/800 */
+    top: 40%;
   }
 
   100% {
-    left: 100%; /* 2560/800 */
-    top: 40%;
+    left: 150%;
   }
 }
 
 @keyframes petals1-rotate {
-/*  33% {
-    transform: rotate(-30deg);
+  10% {
+    transform: rotate(-240deg);
+  }
+}
+
+.petals1copy {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  z-index: 99;
+  width: 31.25%; /*800/2560*/
+  height: 100%;
+  height: auto;
+  /*background-image: url("../img/petals1.png");
+  background-position: */
+  animation-name: petals-copy-x, petals-copy-rotate;
+  animation-duration: 100s, 100s;
+  animation-delay: 8.25s, 8.25s;
+  animation-fill-mode: both, both;
+  /*animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715), cubic-bezier(0.86, 0, 0.07, 1);*/
+  animation-timing-function: ease, ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes petals-copy-x {
+  0% {
+    left: -31.25%;
   }
 
-  55% {
-    transform: rotate(-180deg);
-  }*/
+  2.5% {
+    top: 45%;
+  }
+
+  4% {
+    /*left: 40%;*/
+    top: 25%;
+  }
+
+  10% {
+    left: 100%; /* 2560/800 */
+    top: 40%;
+  }
 
   100% {
-    transform: rotate(-180deg);
+    left: 150%;
+  }
+}
+
+@keyframes petals-copy-rotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  10% {
+    transform: rotate(-360deg);
   }
 }
 
 .petals2 {
   position: absolute;
   left: 0;
-  top: 30%;
+  top: 40%;
   z-index: 99;
   width: 10.7421875%; /*275/2560*/
   height: auto;
   animation-name: petals2-x, petals2-rotate;
-  animation-duration: 10s, 10s;
+  animation-duration: 100s, 100s;
+  animation-delay: 8.5s, 8.5s;
   animation-fill-mode: both, both;
   animation-timing-function: ease, ease;
-
+  animation-iteration-count: infinite;
 }
 
 @keyframes petals2-x {
@@ -420,28 +493,76 @@ li {
     left: -10.7421875%;
   }
 
-  66% {
+  2.5% {
+    top: 35%;
+  }
+
+  4% {
     /*left: 45%;*/
-    top: 25%;
+    top: 10%;
+  }
+
+  10% {
+    left: 110%; /* 2560/800 */
+    top: 30%;
   }
 
   100% {
-    left: 100%; /* 2560/800 */
-    top: 30%;
+    left: 150%;
   }
 }
 
 @keyframes petals2-rotate {
-/*  33% {
-    transform: rotate(-30deg);
+  100% {
+    transform: rotate(-450deg);
+  }
+}
+
+.petals2copy {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  z-index: 99;
+  width: 10.7421875%; /*275/2560*/
+  height: auto;
+  animation-name: petals2copy-x, petals2copy-rotate;
+  animation-duration: 100s, 100s;
+  animation-delay: 8.75s, 8.75s;
+  animation-fill-mode: both, both;
+  animation-timing-function: ease, ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes petals2copy-x {
+  0% {
+    left: -20%;
   }
 
-  55% {
-    transform: rotate(-180deg);
-  }*/
+  2.5% {
+    top: 45%;
+  }
+
+  4% {
+    top: 10%;
+  }
+
+  10% {
+    left: 110%;
+    top: 30%;
+  }
 
   100% {
-    transform: rotate(-240deg);
+    left: 150%;
+  }
+}
+
+@keyframes petals2copy-rotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  10% {
+    transform: rotate(-315deg);
   }
 }
 
@@ -483,21 +604,8 @@ li {
   font-style: italic;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 1920px) {
   .skype {
-    /*padding-left: 97px;*/
     padding-right: 25px;
   }
 }
@@ -568,9 +676,7 @@ li {
     margin-top: 10px;
     margin-right: 10px;
   }
-
 }
-
 
 @media screen and (max-width: 768px) {
   .more-info-btn {
