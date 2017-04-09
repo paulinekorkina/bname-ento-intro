@@ -91,11 +91,11 @@ li {
 
 @keyframes clouds-top {
   from {
-    transform: translateX(-36.38302915382792%);
+    transform: translateX(-31.48072190319934%);
   }
 
   to {
-    transform: translateX(60.67788575491823%);
+    transform: translateX(52.50205086136177%);
   }
 }
 
@@ -122,7 +122,7 @@ li {
   }
 
   to {
-    transform: translateX(60.67788575491823%);
+    transform: translateX(52.50205086136177%);
   }
 }
 
@@ -131,14 +131,14 @@ li {
   top: 0;
   left: 0;
   z-index: 1;
-  width: 164.8046875%;
+  width: 253.9583333333333%; /* 4876/1920 */
   height: 100%;
   background-image: url("../img/clouds-top2.png");
   background-position: left top;
   background-repeat: no-repeat;
   background-size: auto 100%;
   animation-name: clouds-top-copy;
-  animation-duration: 212s;
+  animation-duration: 228s;
   animation-delay: 175s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
